@@ -14,6 +14,7 @@ import {
     AlignRight,
 } from "lucide-react";
 import { Button } from "../button";
+import { ToolTip } from "../tooltip";
 
 type MenuBarProps = {
     editor: Editor | null;
@@ -87,16 +88,17 @@ export const MenuBar = ({ editor }: MenuBarProps) => {
     return (
         <div className="flex items-center border-b p-2 flex-wrap">
             {ACTIONS.map((action) => (
-                <Button
-                    key={action.label}
-                    onClick={action.action}
-                    variant="ghost"
-                    className="p-2 h-max"
-                    type="button"
-                >
-
-                    <action.icon className="w-4 h-4" />
-                </Button>
+                <ToolTip key={action.label} content={action.label}>
+                    <Button
+                        key={action.label}
+                        onClick={action.action}
+                        variant="ghost"
+                        className="p-2 h-max"
+                        type="button"
+                    >
+                        <action.icon className="w-4 h-4" />
+                    </Button>
+                </ToolTip>
             ))
             }
         </div >

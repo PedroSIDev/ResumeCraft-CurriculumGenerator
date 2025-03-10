@@ -7,17 +7,17 @@ import {
 import { ReactNode } from "react";
 
 type ToolTipProps = {
-    children: React.ReactNode;
-    content: string | number | React.ReactNode;
+    children: ReactNode;
+    content: string | number | ReactNode;
 }
 
 export const ToolTip = ({ children, content }: ToolTipProps) => {
     return (
         <TooltipProvider>
-            <TooltipRoot>
+            <TooltipRoot delayDuration={300}>
                 <TooltipTrigger asChild>{children}</TooltipTrigger>
                 <TooltipContent>
-                    <p>Add to library</p>
+                    <p>{content}</p>
                 </TooltipContent>
             </TooltipRoot>
         </TooltipProvider>

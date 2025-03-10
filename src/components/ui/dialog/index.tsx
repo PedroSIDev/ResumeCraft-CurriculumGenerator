@@ -6,28 +6,31 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from "./primitive"
+} from "./primitive";
 
-export type BaseDiaLogProps = {
+export type BaseDialogProps = {
     children?: ReactNode;
     open?: boolean;
     setOpen?: (open: boolean) => void;
 }
 
-type DialogProps = BaseDiaLogProps & {
+type DialogProps = BaseDialogProps & {
     title: string;
     description?: string;
     content: ReactNode;
-}
+};
 
-export const Dialog = ({ children, title, description, content, open, setOpen }: DialogProps) => {
+export const Dialog = ({
+    children,
+    title,
+    description,
+    content,
+    open,
+    setOpen,
+}: DialogProps) => {
     return (
         <DialogRoot open={open} onOpenChange={setOpen}>
-            {children && (
-                <DialogTrigger asChild>
-                    {children}
-                </DialogTrigger>
-            )}
+            {children && <DialogTrigger asChild>{children}</DialogTrigger>}
 
             <DialogContent>
                 <DialogHeader>
@@ -37,6 +40,6 @@ export const Dialog = ({ children, title, description, content, open, setOpen }:
 
                 {content}
             </DialogContent>
-        </DialogRoot >
-    )
-}
+        </DialogRoot>
+    );
+};
