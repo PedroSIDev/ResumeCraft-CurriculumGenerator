@@ -1,10 +1,10 @@
 import { GripVertical, LucideIcon, Plus } from "lucide-react";
 import { SectionTitle } from "../section-title";
 import { useFieldArray, useFormContext } from "react-hook-form";
-import { DragDropContext, Draggable, DropResult, Droppable } from "@hello-pangea/dnd"
+import { DragDropContext, Draggable, DropResult, Droppable } from "@hello-pangea/dnd";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-
+import { ToolTip } from "@/components/ui/tooltip";
 
 export type ResumeArrayKeys = Exclude<keyof ResumeContentData, "image" | "infos" | "summary">;
 
@@ -25,7 +25,7 @@ type MultipleDragListProps = {
 export const MultipleDragList = ({
     data,
     onAdd,
-    onEdit
+    onEdit,
 }: MultipleDragListProps) => {
     const { control } = useFormContext<ResumeData>();
 
@@ -92,14 +92,19 @@ export const MultipleDragList = ({
                                                         >
                                                             <GripVertical size={14} />
                                                         </div>
-                                                        <div className="flex-1 flex flex-col justify-center px-3 cursor-pointer hover:bg-muted/80 transition-all">
-                                                            <p className="text-sm font-title font-bold">
-                                                                {field[titleKey]}
-                                                            </p>
-                                                            <p className="text-xs text-muted-foreground">
-                                                                {field[descriptionKey]}
-                                                            </p>
-                                                        </div>
+                                                        <ToolTip content="Clique para editar">
+                                                            <div
+                                                                className="flex-1 flex flex-col justify-center px-3 cursor-pointer hover:bg-muted/80 transition-all"
+                                                                onClick={() => onEdit(index)}
+                                                            >
+                                                                <p className="text-sm font-title font-bold">
+                                                                    {field[titleKey]}
+                                                                </p>
+                                                                <p className="text-xs text-muted-foreground">
+                                                                    {field[descriptionKey]}
+                                                                </p>
+                                                            </div>
+                                                        </ToolTip>
                                                     </div>
                                                 )}
                                             </Draggable>
@@ -110,6 +115,13 @@ export const MultipleDragList = ({
                             )}
                         </Droppable>
                     </DragDropContext>
+                )}
+
+                {!isEmpty && (
+                    <Button variant="outline" className="w-max gap-2 ml-auto mt-4" onClick={onAdd}>
+                        <Plus size={16} />
+                        Adicionar Item
+                    </Button>
                 )}
             </div>
         </div>
