@@ -42,7 +42,7 @@ export const languagesOptions: LanguageOption[] = [
     },
 ];
 
-export const LangaugeSection = () => {
+export const LanguageSection = () => {
     const { control } = useFormContext<ResumeData>();
     return (
         <div>

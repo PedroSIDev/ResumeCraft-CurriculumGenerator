@@ -2,7 +2,7 @@ import { Separator } from "@/components/ui/separator"
 import { TemplatesListSection } from "./sections/templates-list"
 import { LayoutSection } from "./sections/layout"
 import { ThemeSection } from "./sections/theme"
-import { LangaugeSection } from "./sections/language"
+import { LanguageSection } from "./sections/language"
 
 export const StrutureSidebar = () => {
     return (
@@ -13,7 +13,7 @@ export const StrutureSidebar = () => {
             <Separator className="my-5" />
             <ThemeSection />
             <Separator className="my-5" />
-            <LangaugeSection />
+            <LanguageSection />
         </aside>
     )
 }
