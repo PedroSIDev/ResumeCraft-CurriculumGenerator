@@ -27,14 +27,33 @@ export const ResumePage = () => {
             },
             summary: "",
             certifications: [],
-            educations: [], 
+            educations: [],
             experiences: [],
             languages: [],
             projects: [],
             skills: [],
             socialMedias: [],
-            
+
         },
+        structure: {
+            template: "eevee",
+            colorTheme: "slate",
+            language: "portuguese",
+            layout: {
+                mainSections: [
+                    { key: "socialMedias" },
+                    { key: "summary" },
+                    { key: "experiences" },
+                    { key: "educations" },
+                    { key: "certifications" },
+                    { key: "projects" },
+                ],
+                sidebarSections: [
+                    { key: "languages" },
+                    { key: "skills" },
+                ]
+            }
+        }
     };
     const methods = useForm<ResumeData>({ defaultValues });
 

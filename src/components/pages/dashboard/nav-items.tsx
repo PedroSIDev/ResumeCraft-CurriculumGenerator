@@ -15,6 +15,11 @@ export const NavItens = () => {
             path: "/dashboard/resumes",
         },
         {
+            label: "Documentos",
+            icon: Newspaper,
+            path: "/dashboard/documentos",
+        },
+        {
             label: "Configurações de Conta",
             icon: SquareUser,
             path: "/dashboard/account",
