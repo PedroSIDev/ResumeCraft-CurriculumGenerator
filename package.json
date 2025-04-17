@@ -6,10 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:studio": "npx drizzle-kit studio",
+    "db:push": "npx drizzle-kit push",
+    "db.generate": "npx drizzle-kit generate",
+    "db:migrate": ""
   },
   "dependencies": {
+    "@auth/drizzle-adapter": "^1.8.0",
     "@hello-pangea/dnd": "^18.0.1",
+    "@neondatabase/serverless": "^1.0.0",
     "@radix-ui/react-avatar": "^1.1.2",
     "@radix-ui/react-dialog": "^1.1.6",
     "@radix-ui/react-dropdown-menu": "^2.1.3",
@@ -28,8 +34,11 @@
     "add": "^2.0.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.42.0",
     "lucide-react": "^0.462.0",
     "next": "14.2.5",
+    "next-auth": "^5.0.0-beta.25",
     "next-themes": "^0.4.5",
     "npx": "^10.2.2",
     "react": "^18",
@@ -50,10 +59,12 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/uuid": "^10.0.0",
+    "drizzle-kit": "^0.31.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
+    "tsx": "^4.19.3",
     "typescript": "^5"
   }
 }
