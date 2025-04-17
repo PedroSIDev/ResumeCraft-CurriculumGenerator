@@ -60,7 +60,7 @@ export const Onix = ({ data }: BaseResumeProps) => {
             )}
 
             <Element className="text-xl font-bold">{infos.fullName}</Element>
-            <Element className="text-sm -mt-2">{infos.headLine}</Element>
+            <Element className="text-sm -mt-2">{infos.headline}</Element>
           </div>
 
           <BasicInfos infos={infos} className="mb-2 flex-col gap-1.5 items-start text-xs border border-resume-primary px-2.5 py-3" />

@@ -57,7 +57,7 @@ export const Eevee = ({ data }: BaseResumeProps) => {
 
           <div>
             <Element className="text-2xl font-bold">{infos.fullName}</Element>
-            <Element>{infos.headLine}</Element>
+            <Element>{infos.headline}</Element>
 
             <BasicInfos
               infos={infos}

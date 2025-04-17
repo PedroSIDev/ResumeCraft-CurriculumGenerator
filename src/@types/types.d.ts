@@ -5,7 +5,7 @@ type ResumeImageData = {
 
 type ResumeInfosData = {
     fullName: string;
-    headLine: string;
+    headline: string;
     email: string;
     website: string;
     phone: string;

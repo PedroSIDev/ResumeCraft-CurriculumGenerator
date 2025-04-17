@@ -20,7 +20,7 @@ export const ResumePage = () => {
             infos: {
                 email: "",
                 fullName: "",
-                headLine: "",
+                headline: "",
                 location: "",
                 phone: "",
                 website: "",

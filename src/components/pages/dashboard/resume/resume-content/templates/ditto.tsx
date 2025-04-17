@@ -26,7 +26,7 @@ export const Ditto = ({ data }: BaseResumeProps) => {
         <Element className="text-2xl text-center font-bold">
           {infos.fullName}
         </Element>
-        <Element>{infos.headLine}</Element>
+        <Element>{infos.headline}</Element>
 
         <BasicInfos infos={infos} className="mt-2" />
       </div>

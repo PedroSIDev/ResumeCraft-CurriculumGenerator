@@ -32,7 +32,7 @@ export const Jynx = ({ data }: BaseResumeProps) => {
         </div>
         <div>
           <Element className="text-3xl font-bold">{infos.fullName}</Element>
-          <Element>{infos.headLine}</Element>
+          <Element>{infos.headline}</Element>
         </div>
       </section>
 
